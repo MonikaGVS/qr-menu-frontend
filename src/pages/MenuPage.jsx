@@ -14,7 +14,7 @@ export default function MenuPage() {
 
   // 🥗 Fetch menu when component loads
   useEffect(() => {
-    fetch(`http://localhost:8080/api/menu/${slug}/${tableNumber}`)
+    fetch(`https://qr-menu-backend-way6.onrender.com/api/menu/${slug}/${tableNumber}`)
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
@@ -61,7 +61,7 @@ export default function MenuPage() {
       return;
     }
 
-    const res = await fetch(`http://localhost:8080/api/order`, {
+    const res = await fetch(`https://qr-menu-backend-way6.onrender.com/api/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

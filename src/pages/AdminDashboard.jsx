@@ -10,7 +10,7 @@ export default function AdminDashboard() {
 
   // 🔔 Initialize socket connection
   useEffect(() => {
-    const socket = io("http://localhost:8080");
+    const socket = io("https://qr-menu-backend-way6.onrender.com");
 
     socket.on("newOrder", (order) => {
       console.log("📦 New order received:", order);
@@ -38,25 +38,25 @@ export default function AdminDashboard() {
 
   // 📦 Fetch data initially
   useEffect(() => {
-    fetch("http://localhost:8080/api/orders")
+    fetch("https://qr-menu-backend-way6.onrender.com/api/orders")
       .then(res => res.json())
       .then(data => setOrders(data));
 
-    fetch("http://localhost:8080/api/waiters")
+    fetch("https://qr-menu-backend-way6.onrender.com/api/waiters")
       .then(res => res.json())
       .then(data => setWaiters(data));
   }, []);
 
   // ✅ Assign waiter
   const assignWaiter = async (orderId, waiterId) => {
-    const res = await fetch(`http://localhost:8080/api/orders/${orderId}/assign`, {
+    const res = await fetch(`https://qr-menu-backend-way6.onrender.com/api/orders/${orderId}/assign`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ waiterId }),
     });
     if (res.ok) {
       alert("✅ Waiter assigned!");
-      const updatedOrders = await (await fetch("http://localhost:8080/api/orders")).json();
+      const updatedOrders = await (await fetch("https://qr-menu-backend-way6.onrender.com/api/orders")).json();
       setOrders(updatedOrders);
     }
   };
