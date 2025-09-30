@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./MenuPage.css";
+const API_BASE = import.meta.env.VITE_API_URL || "https://qr-menu-backend-way6.onrender.com";
+
 
 export default function MenuPage() {
   const { slug, tableNumber } = useParams();
@@ -14,7 +16,7 @@ export default function MenuPage() {
 
   // 🥗 Fetch menu when component loads
   useEffect(() => {
-    fetch(`https://qr-menu-backend-way6.onrender.com/api/menu/${slug}/${tableNumber}`)
+    fetch(`${API_BASE}/api/menu/${slug}/${tableNumber}`)
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
@@ -61,7 +63,7 @@ export default function MenuPage() {
       return;
     }
 
-    const res = await fetch(`https://qr-menu-backend-way6.onrender.com/api/order`, {
+    const res = await fetch(`${API_BASE}/api/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
