@@ -1,0 +1,164 @@
+/* 🌐 Global reset */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  color: #222;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;     /* ✅ Center everything horizontally */
+  align-items: flex-start;     /* ✅ Keeps content near top but centered */
+}
+
+/* 🖼️ Full screen wrapper */
+.full-screen {
+  display: flex;
+  justify-content: center;     /* ✅ Center horizontally */
+  align-items: flex-start;     /* ✅ Align content near top (not middle) */
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+/* 📦 Card container for welcome & thank you */
+.center-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;              /* ✅ Centers horizontally */
+}
+
+/* ✏️ Input styling */
+input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 14px;
+  border: 2px solid #ff6347;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #000 !important;
+  background: #fff;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+/* 🚀 Buttons */
+.primary-btn {
+  width: 100%;
+  background: #ff6347;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #e5533d;
+}
+
+/* 🍲 Menu container */
+.menu-container {
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  margin: 0 auto;             /* ✅ Centers the menu horizontally */
+}
+
+/* 📌 Menu Header */
+.menu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.category h2 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* 🍛 Items */
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item {
+  background: #fdfdfd;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* ➕ Quantity buttons */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-controls button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #ff6347;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.qty-controls button:hover {
+  background: #e5533d;
+}
+
+/* 🛒 Cart */
+.cart {
+  margin-top: 40px;
+  background: #fff7f5;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cart p {
+  color: #222;
+  margin: 5px 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
