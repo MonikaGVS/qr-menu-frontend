@@ -136,6 +136,10 @@ export default function MenuPage() {
           </div>
 
           <div className="menu-content">
+            {menu?.categories?.length === 0 && (
+              <p className="empty-menu">🍽️ Menu is not available right now. Please check back later.</p>
+            )}
+
             {menu?.categories?.map((cat) => (
               <div key={cat.id} className="category">
                 <h2>{cat.name}</h2>
@@ -156,6 +160,7 @@ export default function MenuPage() {
               </div>
             ))}
           </div>
+
 
           <div className="cart">
             <h3>🛒 Your Cart ({cart.length} items)</h3>
